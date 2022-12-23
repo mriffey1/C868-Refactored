@@ -21,7 +21,7 @@ public class NoteModify implements Initializable {
     @FXML
     private TextField modifyNoteId;
     int usrname;
-    SceneChange sceneChange = new SceneChange();
+//    SceneChange sceneChange = new SceneChange();
     ObservableList<Integer> list = FXCollections.observableArrayList();
 
     @Override
@@ -44,7 +44,7 @@ public class NoteModify implements Initializable {
         LocalDateTime lastUpdated = LocalDateTime.now();
         NoteDAO.updateNote(id, notes, lastUpdated, list.get(usrname));
         helper.ErrorMsg.confirmation(6);
-       sceneChange.sceneClose(actionEvent);
+        SceneChange.sceneChange.sceneClose(actionEvent);
     }
 
 

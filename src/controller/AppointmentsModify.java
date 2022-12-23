@@ -1,6 +1,7 @@
 package controller;
 
 import DAO.*;
+import helper.SceneChange;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -196,7 +197,8 @@ public class AppointmentsModify implements Initializable {
             return;
         } else {
             AppointmentDAO.updateAppointment(appointmentId, appointmentTitle, appointmentDescription, type, appointmentStart, appointmentEnd, appointmentCustomerId, appointmentUserId, appointmentContact, appointmentAnimalId);
-            backToAppointments(actionEvent);
+//            backToAppointments(actionEvent);
+            SceneChange.sceneChange.appointmentScreenChange(actionEvent);
 
         }
         helper.ErrorMsg.confirmation(4);
@@ -215,8 +217,8 @@ public class AppointmentsModify implements Initializable {
      * @throws IOException addresses unhandled exceptions
      */
     public void actionCancelButton(ActionEvent actionEvent) throws IOException {
-        backToAppointments(actionEvent);
-
+//        backToAppointments(actionEvent);
+SceneChange.sceneChange.appointmentScreenChange(actionEvent);
     }
 
     /**
@@ -249,10 +251,10 @@ public class AppointmentsModify implements Initializable {
         animalCombo.setValue(a);
     }
 
-    public void backToAppointments(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        stage.close();
-    }
+//    public void backToAppointments(ActionEvent actionEvent) throws IOException {
+//        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+//        stage.close();
+//    }
 
     public void actionAnimalLoad(ActionEvent actionEvent) {
         Customer c = customerCombo.getValue();

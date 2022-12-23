@@ -25,7 +25,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Animals implements Initializable {
-    SceneChange sceneChange = new SceneChange();
+//    SceneChange sceneChange = new SceneChange();
     ObservableList<Animal> animalList = AnimalDAO.getAllAnimals();
 
     @FXML private TableView<Animal> animalView;
@@ -144,18 +144,22 @@ public class Animals implements Initializable {
     }
 
     public void customerScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.customerScreenChange(actionEvent);
+//        sceneChange.customerScreenChange(actionEvent);
+        SceneChange.sceneChange.customerScreenChange(actionEvent);
     }
 
     public void animalScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.animalScreenChange(actionEvent);
+//        sceneChange.animalScreenChange(actionEvent);
+        SceneChange.sceneChange.animalScreenChange(actionEvent);
     }
 
     public void appointmentScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.appointmentScreenChange(actionEvent);
+        SceneChange.sceneChange.appointmentScreenChange(actionEvent);
+//        sceneChange.appointmentScreenChange(actionEvent);
     }
 
     public void reportsScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.reportsScreenChange(actionEvent);
+//        sceneChange.reportsScreenChange(actionEvent);
+        SceneChange.sceneChange.reportsScreenChange(actionEvent);
     }
 }

@@ -34,7 +34,7 @@ public class NoteAdd extends AnimalModify implements Initializable {
     int value2;
     Button addSaveBtn;
 
-    SceneChange sceneChange = new SceneChange();
+//    SceneChange sceneChange = new SceneChange();
     ObservableList<Integer> list = FXCollections.observableArrayList();
 
     public void setAnimalId(int usrname) {
@@ -48,17 +48,17 @@ public class NoteAdd extends AnimalModify implements Initializable {
         LocalDateTime lastUpdated = LocalDateTime.now();
         NoteDAO.addNote(notes, createdDate, lastUpdated, list.get(usrname));
         helper.ErrorMsg.confirmation(7);
-        sceneChange.sceneClose(actionEvent);
+        SceneChange.sceneChange.sceneClose(actionEvent);
 
     }
 
     public void addCancelBtn(ActionEvent actionEvent) {
-        sceneChange.sceneClose(actionEvent);
+        SceneChange.sceneChange.sceneClose(actionEvent);
     }
 
     @FXML
     public void handleCloseButtonAction(ActionEvent actionEvent) {
-        sceneChange.sceneClose(actionEvent);
+        SceneChange.sceneChange.sceneClose(actionEvent);
     }
 
     @Override

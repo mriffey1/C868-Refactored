@@ -3,6 +3,7 @@ package controller;
 import DAO.AnimalDAO;
 import DAO.CustomerDAO;
 import DAO.NoteDAO;
+import helper.SceneChange;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -77,7 +78,8 @@ public class AnimalModify implements Initializable {
                 int animalWeight = Integer.parseInt(animalWeightTxt.getText());
                 helper.ErrorMsg.confirmation(11);
                 AnimalDAO.updateAnimal(animalId, animalName, animalType, animalAge, animalBreed, animalWeight, ownerId);
-                backToAppointments(actionEvent);
+//                backToAppointments(actionEvent);
+                SceneChange.sceneChange.appointmentScreenChange(actionEvent);
             }
         } catch (NumberFormatException e) {
             throw new RuntimeException(e);
@@ -187,12 +189,12 @@ public class AnimalModify implements Initializable {
         }
     }
 
-    public void backToAppointments(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        stage.close();
-    }
+//    public void backToAppointments(ActionEvent actionEvent) throws IOException {
+//        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+//        stage.close();
+//    }
 
     public void cancelBtn(ActionEvent actionEvent) throws IOException {
-        backToAppointments(actionEvent);
+       SceneChange.sceneChange.animalScreenChange(actionEvent);
     }
 }

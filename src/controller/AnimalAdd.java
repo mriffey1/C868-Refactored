@@ -3,6 +3,7 @@ package controller;
 import DAO.AnimalDAO;
 import DAO.CustomerDAO;
 import DAO.NoteDAO;
+import helper.SceneChange;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -82,19 +83,21 @@ public class AnimalAdd implements Initializable {
                 if (!animalNotes.isBlank() || !animalNotes.isEmpty()) {
                     NoteDAO.addNote(animalNotes, createdDate, lastUpdated, id);
                 }
-                backToAppointments(actionEvent);
+                SceneChange.sceneChange.appointmentScreenChange(actionEvent);
+//                backToAppointments(actionEvent);
             }
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void backToAppointments(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        stage.close();
-    }
+//    public void backToAppointments(ActionEvent actionEvent) throws IOException {
+//        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+//        stage.close();
+//    }
 
     public void cancelBtn(ActionEvent actionEvent) throws IOException {
-        backToAppointments(actionEvent);
+//        backToAppointments(actionEvent);
+        SceneChange.sceneChange.appointmentScreenChange(actionEvent);
     }
 }

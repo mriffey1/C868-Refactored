@@ -57,7 +57,7 @@ public class Login implements Initializable {
     @FXML
     private ImageView imView;
 
-    SceneChange sceneChange = new SceneChange();
+//    SceneChange sceneChange = new SceneChange();
 
     // Loads language bundle to convert languages based on user's system language
     ResourceBundle langBundle = ResourceBundle.getBundle("language/lang");

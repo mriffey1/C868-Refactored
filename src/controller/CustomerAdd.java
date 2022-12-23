@@ -3,6 +3,7 @@ package controller;
 import DAO.CountryDAO;
 import DAO.CustomerDAO;
 import DAO.FirstLvlDivisionDAO;
+import helper.SceneChange;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -73,7 +74,8 @@ public class CustomerAdd implements Initializable {
                 int divisionId = divId.getDivisionID();
                 CustomerDAO.addCustomer(customerName, customerAddress, customerPostalCode, customerPhone, createdDate, lastUpdated, divisionId);
                 helper.ErrorMsg.confirmation(3);
-                backToCustomers(actionEvent);
+//                backToCustomers(actionEvent);
+                SceneChange.sceneChange.customerScreenChange(actionEvent);
             }
 
         } catch (SQLException e) {
@@ -88,8 +90,8 @@ public class CustomerAdd implements Initializable {
      * @throws IOException addresses unhandled exception
      */
     public void actionCancelButton(ActionEvent actionEvent) throws IOException {
-        backToCustomers(actionEvent);
-
+//        backToCustomers(actionEvent);
+SceneChange.sceneChange.customerScreenChange(actionEvent);
 
     }
 
@@ -124,8 +126,8 @@ public class CustomerAdd implements Initializable {
      * @param actionEvent event for redirecting back to main Customers screen
      * @throws IOException addresses unhandled exceptions
      */
-    public void backToCustomers(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        stage.close();
-    }
+//    public void backToCustomers(ActionEvent actionEvent) throws IOException {
+//        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+//        stage.close();
+//    }
 }

@@ -59,7 +59,7 @@ public class Customers implements Initializable {
     @FXML
     private Button custUpdateLabel;
 
-    SceneChange sceneChange = new SceneChange();
+//    SceneChange sceneChange = new SceneChange();
     // ObservableList with all customers from database
     ObservableList<Customer> CustomerList = CustomerDAO.getCustomerList();
 
@@ -224,18 +224,18 @@ public class Customers implements Initializable {
     }
 
     public void customerScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.customerScreenChange(actionEvent);
+       SceneChange.sceneChange.customerScreenChange(actionEvent);
     }
 
     public void animalScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.animalScreenChange(actionEvent);
+        SceneChange.sceneChange.animalScreenChange(actionEvent);
     }
 
     public void appointmentScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.appointmentScreenChange(actionEvent);
+        SceneChange.sceneChange.appointmentScreenChange(actionEvent);
     }
 
     public void reportsScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.reportsScreenChange(actionEvent);
+        SceneChange.sceneChange.reportsScreenChange(actionEvent);
     }
 }

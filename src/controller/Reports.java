@@ -78,7 +78,7 @@ public class Reports implements Initializable {
     @FXML
     private TableView<Appointment> contactTable;
     MenuBar menuBar;
-    SceneChange sceneChange = new SceneChange();
+//    SceneChange sceneChange = new SceneChange();
     // ObservableList that has all contacts from the database
     ObservableList<VetTech> contactList = VetTechDAO.getAllTechs();
 
@@ -147,18 +147,18 @@ public class Reports implements Initializable {
     }
 
     public void customerScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.customerScreenChange(actionEvent);
+        SceneChange.sceneChange.customerScreenChange(actionEvent);
     }
 
     public void animalScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.animalScreenChange(actionEvent);
+        SceneChange.sceneChange.animalScreenChange(actionEvent);
     }
 
     public void appointmentScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.appointmentScreenChange(actionEvent);
+        SceneChange.sceneChange.appointmentScreenChange(actionEvent);
     }
 
     public void reportsScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.reportsScreenChange(actionEvent);
+        SceneChange.sceneChange.reportsScreenChange(actionEvent);
     }
 }

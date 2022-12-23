@@ -111,7 +111,7 @@ public class Appointments implements Initializable {
     @FXML
     private TextField filterField;
 
-    SceneChange sceneChange = new SceneChange();
+//    SceneChange sceneChange = new SceneChange();
     ObservableList<Appointment> AppointmentList = FXCollections.observableArrayList();
     ObservableList<Appointment> allAppointmentSearch = FXCollections.observableArrayList();
     ObservableList<Appointment> weeklyAppointmentSearch = FXCollections.observableArrayList();
@@ -320,19 +320,19 @@ public class Appointments implements Initializable {
     }
 
     public void customerScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.customerScreenChange(actionEvent);
+        SceneChange.sceneChange.customerScreenChange(actionEvent);
     }
 
     public void animalScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.animalScreenChange(actionEvent);
+        SceneChange.sceneChange.animalScreenChange(actionEvent);
     }
 
     public void appointmentScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.appointmentScreenChange(actionEvent);
+        SceneChange.sceneChange.appointmentScreenChange(actionEvent);
     }
 
     public void reportsScreen(ActionEvent actionEvent) throws IOException {
-        sceneChange.reportsScreenChange(actionEvent);
+        SceneChange.sceneChange.reportsScreenChange(actionEvent);
     }
 
 
